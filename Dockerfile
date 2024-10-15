@@ -6,8 +6,6 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
-# RUN npm login --registry=https://nexus.eitccorp.com/repository/npm-global/
-COPY .npmrc /root/.npmrc
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN \
